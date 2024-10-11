@@ -26,12 +26,12 @@ namespace MvcStartApp.Controllers
         {
             var newUser = new User();
             //{
-            //    Id = Guid.NewGuid() ,
+            //    Id = Guid.NewGuid(),
             //    FirstName = "Andrey",
             //    LastName = "Petrov",
             //    JoinDate = DateTime.Now
             //};
-            await _repo.AddUser(newUser);
+            //await _repo.AddUser(newUser);
 
             Console.WriteLine($"User with id {newUser.Id}, named {newUser.FirstName} was successfully added on {newUser.JoinDate}");
 
