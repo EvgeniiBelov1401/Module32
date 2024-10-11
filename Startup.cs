@@ -8,6 +8,7 @@ using Microsoft.Extensions.Hosting;
 using MvcStartApp.Controllers.Repository;
 using MvcStartApp.Middlewares;
 using MvcStartApp.Models;
+using MvcStartApp.Models.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;

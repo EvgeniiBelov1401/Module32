@@ -33,7 +33,9 @@ namespace MvcStartApp.Controllers.Repository
 
         public async Task<User[]> GetUsers()
         {
+
             return await _context.Users.ToArrayAsync();
         }
+    
     }
 }

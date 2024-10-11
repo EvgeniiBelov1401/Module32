@@ -1,7 +1,9 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MvcStartApp.Models.Db
 {
+    [Table("Requests")]
     public class Request
     {
         public Guid Id { get; set; }
