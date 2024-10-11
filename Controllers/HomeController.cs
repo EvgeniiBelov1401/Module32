@@ -26,7 +26,7 @@ namespace MvcStartApp.Controllers
         {
             var newUser = new User();
             //{
-            //    Id = Guid.NewGuid(),
+            //    Id = Guid.NewGuid() ,
             //    FirstName = "Andrey",
             //    LastName = "Petrov",
             //    JoinDate = DateTime.Now
