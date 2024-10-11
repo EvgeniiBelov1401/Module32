@@ -33,6 +33,7 @@ namespace MvcStartApp
             services.AddDbContext<BlogContext>(options => options.UseSqlServer(connection));
             services.AddControllersWithViews();
             services.AddScoped<IBlogRepository, BlogRepository>();
+            services.AddScoped<IRequestRepository, RequestRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
