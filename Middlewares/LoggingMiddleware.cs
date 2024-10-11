@@ -29,7 +29,7 @@ namespace MvcStartApp.Middlewares
         public async Task InvokeAsync(HttpContext context)
         {
 
-            requestRepository.AddLog(context);
+            await requestRepository.AddLog(context);
 
 
             // Для логирования данных о запросе используем свойста объекта HttpContext
