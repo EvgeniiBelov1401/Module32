@@ -33,7 +33,7 @@ namespace MvcStartApp.Controllers
             //};
             //await _repo.AddUser(newUser);
 
-            Console.WriteLine($"User with id {newUser.Id}, named {newUser.FirstName} was successfully added on {newUser.JoinDate}");
+            //Console.WriteLine($"User with id {newUser.Id}, named {newUser.FirstName} was successfully added on {newUser.JoinDate}");
 
             return View();
         }
