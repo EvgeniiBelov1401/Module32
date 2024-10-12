@@ -9,19 +9,14 @@ namespace MvcStartApp.Models.Repository
     public class RequestRepository : IRequestRepository
     {
         private readonly BlogContext _context;
-        Request request;
 
-        public RequestRepository(BlogContext context, Request request)
+
+        public RequestRepository(BlogContext context)
         {
             _context = context;
-            this.request = request;
         }
-        public async Task AddLog(HttpContext log)
+        public async Task AddLog(Request request)
         {
-            request.Id = Guid.NewGuid();
-            request.Date = DateTime.Now;
-            request.Url=log.Request.Host.Value+log.Request.Path;
-
             await _context.Requests.AddAsync(request);
             await _context.SaveChangesAsync();
         }

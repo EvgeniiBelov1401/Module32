@@ -28,8 +28,13 @@ namespace MvcStartApp.Middlewares
         /// </summary>
         public async Task InvokeAsync(HttpContext context)
         {
-
-            await requestRepository.AddLog(context);
+            var request = new Request
+            {
+                Id = Guid.NewGuid(),
+                Date = DateTime.Now,
+                Url=context.Request.Host.Value+context.Request.Path
+            };
+            await requestRepository.AddLog(request);
 
 
             // Для логирования данных о запросе используем свойста объекта HttpContext

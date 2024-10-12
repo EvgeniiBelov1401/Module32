@@ -6,7 +6,7 @@ namespace MvcStartApp.Models.Repository
 {
     public interface IRequestRepository
     {
-        Task AddLog(HttpContext log);
+        Task AddLog(Request request);
         Task<Request[]> GetLog();
     }
 }
