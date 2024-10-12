@@ -3,6 +3,7 @@ using Microsoft.Extensions.Logging;
 using MvcStartApp.Controllers.Repository;
 using MvcStartApp.Models;
 using MvcStartApp.Models.Db;
+using MvcStartApp.Models.Repository;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -15,11 +16,13 @@ namespace MvcStartApp.Controllers
     {
         private readonly IBlogRepository _repo;
         private readonly ILogger<HomeController> _logger;
+        private readonly IRequestRepository _requestRepository;
 
-        public HomeController(ILogger<HomeController> logger, IBlogRepository repo)
+        public HomeController(ILogger<HomeController> logger, IBlogRepository repo, IRequestRepository request)
         {
             _logger = logger;
             _repo = repo;
+            _requestRepository = request;
         }
 
         public async Task<IActionResult> Index()
@@ -52,6 +55,11 @@ namespace MvcStartApp.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+        public async Task<IActionResult> Logs()
+        {
+            var logs = await _requestRepository.GetLog();
+            return View(logs);
         }
     }
 }

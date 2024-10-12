@@ -4,7 +4,7 @@ using System.Diagnostics;
 
 namespace MvcStartApp.Controllers
 {
-    public class FeedbackController:Controller
+    public class FeedbackController : Controller
     {
         /// <summary>
         ///  Метод, возвращающий страницу с отзывами
